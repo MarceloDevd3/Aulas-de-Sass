@@ -1,0 +1,43 @@
+.btn {
+    width: 200px;
+    padding: 10px 0;
+    background: none;
+    border:none;
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 10px;
+}
+
+
+@mixin button-style($background,$color) {
+ background: $background;
+ color: $color;
+ &:hover {
+    background: grayscale($background)
+ }
+}
+
+/*
+.btn-orange {
+    @extend .btn;
+    background-color:$color-blue;
+    color:$color;
+    font-weight: 600;
+}
+*/
+
+
+.btn-orange {
+    @extend .btn;
+    @include button-style($bg-color-orange, $color)
+}
+.btn-purple {
+    @extend .btn;
+    @include button-style($bg-color-purple, $color)
+}
+
+.btn-green {
+    @extend .btn;
+    @include button-style($bg-color-green, $color-blue)
+}
+
